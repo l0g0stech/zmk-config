@@ -63,6 +63,8 @@
 &trans  &kp Z   &kp X   &kp C   &kp D   &kp V   &trans  &trans  &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
             >;
+
+            label = "colemak";
         };
 
         sym {
@@ -73,6 +75,8 @@
 &none  &kp TILDE        &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT  &none      &none   &kp AT  &kp COLON             &kp COMMA              &kp DOT       &kp LSHFT          &none
                         &none          &none             &none      &mo 4        &none      &trans  &none   &none                 &none                  &none
             >;
+
+            label = "sym";
         };
 
         arrows {
@@ -104,6 +108,8 @@
 &none  &none      &kp N6  &kp N5  &kp N4  &kp PERCENT  &none  &none  &none  &none  &none  &none  &none  &none
                   &none   &none   &none   &mo 4        &none  &mo 2  &none  &none  &none  &none
             >;
+
+            label = "num";
         };
 
         fun {
@@ -124,6 +130,8 @@
 &none  &none  &kp LG(KP_NUMBER_6)  &kp LG(KP_NUMBER_5)  &kp LG(KP_NUMBER_4)  &none      &none  &none  &none  &kp LS(LA(TAB))  &kp LA(TAB)  &none  &none  &none
               &none                &none                &none                &none      &none  &none  &none  &none            &none        &none
             >;
+
+            label = "window";
         };
 
         adjust {

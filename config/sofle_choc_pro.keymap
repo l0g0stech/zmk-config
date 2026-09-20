@@ -67,7 +67,7 @@
 
         sym {
             bindings = <
-&none  &none            &none          &none             &none      &none                           &none   &none                 &none                  &none         &none              &none
+&none  &none            &none          &none             &none      &none                           &none   &none                 &none                  &none         &none              &studio_unlock
 &none  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp RSHFT    &kp CARET                  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(DLLR)  &none              &none
 &none  &kp EXCLAMATION  &kp STAR       &kp FSLH          &kp EQUAL  &kp AMPS     &kp HASH                   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI      &kp DOUBLE_QUOTES  &none
 &none  &kp TILDE        &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT  &none      &none   &kp AT  &kp COLON             &kp COMMA              &kp DOT       &kp LSHFT          &none

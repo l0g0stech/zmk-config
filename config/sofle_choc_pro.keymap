@@ -22,12 +22,14 @@
 / {
     // Activate ADJUST layer by pressing raise and lower
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
-        adjust_layer {
-            if-layers = <5 3>;
-            then-layer = <4>;
+    combos {
+        compatible = "zmk,combos";
+
+        bothlayers {
+            bindings = <&mo 7>;
+            key-positions = <53 56>;
         };
     };
 
@@ -70,10 +72,10 @@
         sym {
             bindings = <
 &none  &none            &none          &none             &none      &none                           &none   &none                 &none                  &none         &none              &studio_unlock
-&none  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp RSHFT    &kp CARET                  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(DLLR)  &none              &none
+&none  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp RSHFT    &kp CARET                  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(DLLR)  &none              &tog 4
 &none  &kp EXCLAMATION  &kp STAR       &kp FSLH          &kp EQUAL  &kp AMPS     &kp HASH                   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI      &kp DOUBLE_QUOTES  &none
 &none  &kp TILDE        &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT  &none      &none   &kp AT  &kp COLON             &kp COMMA              &kp DOT       &kp LSHFT          &none
-                        &none          &none             &none      &mo 4        &none      &trans  &none   &none                 &none                  &none
+                        &none          &none             &none      &trans       &none      &trans  &trans  &none                 &none                  &none
             >;
 
             label = "sym";
@@ -90,11 +92,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none  &none         &none     &none          &none    &none
-&none  &kp INS       &kp PSCRN     &kp K_CMENU   &none         &none           &kp PG_UP                &kp LC(LEFT)  &kp UP    &kp LC(RIGHT)  &kp N0   &none
-&none  &kp LALT      &kp LCTRL     &kp LSHFT     &none         &kp CLCK        &kp PG_DN                &kp LEFT      &kp DOWN  &kp RIGHT      &kp DEL  &kp BSPC
-&none  &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &studio_unlock  &none      &none  &none  &kp HOME      &none     &kp END        &none    &none
-                     &none         &none         &none         &none           &mo 3      &sl 7  &none  &none         &none     &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none   &none         &none     &none          &none    &none
+&none  &kp INS       &kp PSCRN     &kp K_CMENU   &none         &none           &kp PG_UP                 &kp LC(LEFT)  &kp UP    &kp LC(RIGHT)  &kp N0   &none
+&none  &kp LALT      &kp LCTRL     &kp LSHFT     &none         &kp CLCK        &kp PG_DN                 &kp LEFT      &kp DOWN  &kp RIGHT      &kp DEL  &kp BSPC
+&none  &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &studio_unlock  &none      &none  &none   &kp HOME      &none     &kp END        &none    &none
+                     &none         &none         &none         &trans          &none      &none  &trans  &none         &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
@@ -102,11 +104,11 @@
 
         num {
             bindings = <
-&none  &none      &kp N0  &kp N0  &kp N0  &none                      &none  &none  &none  &none  &none  &none
-&none  &kp FSLH   &kp N9  &kp N8  &kp N7  &kp STAR     &none                &none  &none  &none  &none  &none
-&none  &kp MINUS  &kp N3  &kp N2  &kp N1  &kp PLUS     &none                &none  &none  &none  &none  &none
-&none  &none      &kp N6  &kp N5  &kp N4  &kp PERCENT  &none  &none  &none  &none  &none  &none  &none  &none
-                  &none   &none   &none   &mo 4        &none  &mo 2  &none  &none  &none  &none
+&tog 1  &none      &kp N0  &kp N0  &kp N0  &none                      &none   &none  &none  &none  &none  &none
+&none   &kp FSLH   &kp N9  &kp N8  &kp N7  &kp STAR     &none                 &none  &none  &none  &none  &none
+&none   &kp MINUS  &kp N3  &kp N2  &kp N1  &kp PLUS     &none                 &none  &none  &none  &none  &none
+&none   &none      &kp N6  &kp N5  &kp N4  &kp PERCENT  &none  &none  &none   &none  &none  &none  &none  &none
+                   &none   &none   &none   &trans       &none  &mo 2  &trans  &none  &none  &none
             >;
 
             label = "num";
@@ -114,7 +116,7 @@
 
         fun {
             bindings = <
-&trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&tog 1  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F12  &kp F9  &kp F8  &kp F7  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F10  &kp F3  &kp F2  &kp F1  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &kp F11  &kp F6  &kp F5  &kp F4  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -124,11 +126,11 @@
 
         window {
             bindings = <
-&none  &none  &none                &none                &none                &none                    &none  &none            &none        &none  &none  &none
-&none  &none  &none                &none                &none                &none      &none                &none            &none        &none  &none  &none
-&none  &none  &kp LG(KP_NUMBER_3)  &kp LG(KP_NUMBER_2)  &kp LG(KP_N1)        &kp LG(D)  &none                &none            &none        &none  &none  &none
-&none  &none  &kp LG(KP_NUMBER_6)  &kp LG(KP_NUMBER_5)  &kp LG(KP_NUMBER_4)  &none      &none  &none  &none  &kp LS(LA(TAB))  &kp LA(TAB)  &none  &none  &none
-              &none                &none                &none                &none      &none  &none  &none  &none            &none        &none
+&none  &none  &none                &none                &none                &none                    &none   &none            &none        &none  &none  &none
+&none  &none  &none                &none                &none                &none      &none                 &none            &none        &none  &none  &none
+&none  &none  &kp LG(KP_NUMBER_3)  &kp LG(KP_NUMBER_2)  &kp LG(KP_N1)        &kp LG(D)  &none                 &none            &none        &none  &none  &none
+&none  &none  &kp LG(KP_NUMBER_6)  &kp LG(KP_NUMBER_5)  &kp LG(KP_NUMBER_4)  &none      &none  &none  &none   &kp LS(LA(TAB))  &kp LA(TAB)  &none  &none  &none
+              &none                &none                &none                &trans     &none  &none  &trans  &none            &none        &none
             >;
 
             label = "window";
@@ -144,11 +146,21 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none  &none  &none  &none  &none  &tog 1
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none                          &none  &none  &none  &none  &tog 0
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none                          &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none  &none  &none  &none  &none  &none
-                                    &none            &none            &none            &none            &none            &none  &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                             &none   &none  &tog 5  &none  &tog 5  &tog 1
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none                           &none  &none   &none  &none   &tog 0
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none                           &none  &none   &none  &none   &none
+&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG  &none  &none   &none  &none   &none  &none   &none
+                                    &none            &none            &none            &trans           &none            &none  &trans  &none  &none   &none
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
